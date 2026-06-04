@@ -1,0 +1,7 @@
+bin/
+obj/
+
+# Jetbrains IDEs
+.idea/
+.fleet/
+.junie/

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Redot_Documentation</RootNamespace>
+        <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
+        <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Redot-Documentation.Client\Redot-Documentation.Client.csproj"/>
+        <PackageReference Include="Markdig" Version="0.41.3"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.7"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="docs/**" CopyToOutputDirectory="PreserveNewest">
+        </None>
+    </ItemGroup>
+
+</Project>
