@@ -6,5 +6,5 @@ namespace Redot_Documentation;
 public static class IconConstants
 {
     public static string RedotIcon => "/Icons/redot_logo.svg";
-    public static string TipsIcon => "/Icons/Font-Awsome/regular/lightbulb.svg";
+    public static string TipsIcon => "/Icons/Font-Awesome/regular/lightbulb.svg";
 }

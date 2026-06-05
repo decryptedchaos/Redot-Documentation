@@ -120,8 +120,8 @@ h1:focus {
 
     background-color: white;
 
-    -webkit-mask: url("./Icons/Font-Awsome/regular/lightbulb.svg") no-repeat center;
-    mask: url("./Icons/Font-Awsome/regular/lightbulb.svg") no-repeat center;
+    -webkit-mask: url("./Icons/Font-Awesome/regular/lightbulb.svg") no-repeat center;
+    mask: url("./Icons/Font-Awesome/regular/lightbulb.svg") no-repeat center;
 
     -webkit-mask-size: contain;
     mask-size: contain;
