@@ -18,5 +18,8 @@
         <None Update="docs/**" CopyToOutputDirectory="PreserveNewest">
         </None>
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="wwwroot\Icons\" />
+    </ItemGroup>
 
 </Project>

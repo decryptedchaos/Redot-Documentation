@@ -96,3 +96,41 @@ h1:focus {
 .doc-tab-panel.active {
     display: block;
 }
+
+.alert-tip {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+
+    background: #004400;
+    border-left: 8px solid #35d07f;
+    border-radius: 4px;
+    padding: 20px 24px;
+    color: white;
+}
+
+.alert-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.alert-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.alert-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+}
+
+.alert-message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
