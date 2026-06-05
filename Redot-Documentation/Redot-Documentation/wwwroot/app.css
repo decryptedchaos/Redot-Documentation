@@ -97,7 +97,7 @@ h1:focus {
     display: block;
 }
 
-.alert-tip {
+.callout-tip {
     display: flex;
     gap: 16px;
     align-items: flex-start;
@@ -109,19 +109,45 @@ h1:focus {
     color: white;
 }
 
-.alert-icon {
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
+.horizontal-stack {
+    display: flex;
+    gap: 16px;
 }
 
-.alert-content {
+.callout-icon-tip {
+    width: 24px;
+    height: 24px;
+
+    background-color: white;
+
+    -webkit-mask: url("./Icons/Font-Awsome/regular/lightbulb.svg") no-repeat center;
+    mask: url("./Icons/Font-Awsome/regular/lightbulb.svg") no-repeat center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+
+.redot-logo-icon {
+    width: 24px;
+    height: 24px;
+
+    background-color: white;
+
+    -webkit-mask: url("./Icons/redot_logo.svg") no-repeat center;
+    mask: url("./Icons/redot_logo.svg") no-repeat center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.callout-content {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.alert-title {
+.callout-title {
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -129,7 +155,7 @@ h1:focus {
     color: #ffffff;
 }
 
-.alert-message {
+.callout-message {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #ffffff;
