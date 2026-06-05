@@ -58,14 +58,25 @@ public class DocRendererService
             @"^import\s+TabItem\s+from\s+[\""'][^\""']+[\""'];\s*$",
             string.Empty,
             RegexOptions.IgnoreCase | RegexOptions.Multiline);
-
+        // Parse callout blocks
+        // tip
         transformedMarkdown = Regex.Replace(
             transformedMarkdown,
             @":::tip\s*\r?\n(.*?)\r?\n:::",
             match => TransformCallout(match.Value, "tip", IconConstants.TipsIcon),
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        
-
+        // note
+        transformedMarkdown = Regex.Replace(
+            transformedMarkdown,
+            @":::note\s*\r?\n(.*?)\r?\n:::",
+            match => TransformCallout(match.Value, "note", IconConstants.TipsIcon),
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        // info
+        transformedMarkdown = Regex.Replace(
+            transformedMarkdown,
+            @":::info\s*\r?\n(.*?)\r?\n:::",
+            match => TransformCallout(match.Value, "info", IconConstants.TipsIcon),
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
         transformedMarkdown = TransformTabsBlocks(transformedMarkdown);
 
         return transformedMarkdown;
