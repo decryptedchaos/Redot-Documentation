@@ -59,6 +59,13 @@ public class DocRendererService
             string.Empty,
             RegexOptions.IgnoreCase | RegexOptions.Multiline);
 
+        transformedMarkdown = Regex.Replace(
+            transformedMarkdown,
+            @":::tip\s*\r?\n(.*?)\r?\n:::",
+            match => TransformCallout(match.Value, "tip", IconConstants.TipsIcon),
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        
+
         transformedMarkdown = TransformTabsBlocks(transformedMarkdown);
 
         return transformedMarkdown;
@@ -149,5 +156,28 @@ public class DocRendererService
         }
 
         return sanitized;
+    }
+
+    public static string TransformCallout(string markdownSection, string calloutType, string? iconPath = null)
+    {
+        string calloutLower = calloutType.ToLowerInvariant();
+        string calloutUpper = calloutType.ToUpperInvariant();
+        string transformedSection = markdownSection.Replace($":::{calloutLower}", string.Empty)
+            .Replace(":::", string.Empty)
+            .Trim();
+        string transformed = $"""
+                              <div class="callout-{calloutLower}">
+                                  <div class="callout-icon-{calloutLower}"></div>
+                                  <div class="callout-content">
+                                      <div class="callout-title">{calloutUpper}</div>
+                                      <div class="callout-message">
+                                          <p>
+                                              {transformedSection}
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                              """;
+        return transformed;
     }
 }
