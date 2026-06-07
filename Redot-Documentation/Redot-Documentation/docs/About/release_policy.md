@@ -16,7 +16,7 @@ Redot is hard forked from Godot 4.5.2, and aims to be compatible with most Godot
 
 In addition to stable releases, we also periodically release beta versions.
 These are not intended for production use, but we encourage users to try them out and provide feedback.
-These are versioned slightly differently from stable releases, with a ``-beta.<Build Number>`` suffix (e.g. ``26.2-beta.1``)
+These are versioned slightly differently from stable releases, with a ``-beta.&ltBuild Number&gt`` suffix (e.g. ``26.2-beta.1``)
  or ``-rc.<Build Number>`` suffix (e.g. ``26.2-rc.1``).
 
 :::

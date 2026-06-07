@@ -183,15 +183,14 @@ public class DocRendererService
         string transformedSection = markdownSection.Replace($":::{calloutLower}", string.Empty)
             .Replace(":::", string.Empty)
             .Trim();
+        transformedSection = Markdown.ToHtml(transformedSection, MarkdownPipeline).Trim();
         string transformed = $"""
                               <div class="callout-{calloutLower}">
                                   <div class="callout-icon-{calloutLower}"></div>
                                   <div class="callout-content">
                                       <div class="callout-title">{calloutUpper}</div>
                                       <div class="callout-message">
-                                          <p>
                                               {transformedSection}
-                                          </p>
                                       </div>
                                   </div>
                               </div>
