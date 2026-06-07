@@ -9,7 +9,7 @@ The site is still under heavy construction and is not ready yet, but we hope to 
 ## Development
 
 There are no detailed build instructions at this time. The use of an IDE such as Visual Studio or JetBrains Rider is highly recommended. Simply build the solution and run the `Redot-Documentation` project.
-The docs themselves can be found in the `Redot-Documentation/Redot-Documentation/docs/` folder, and are just standard markdown files.
+The docs themselves can be found in the `Redot-Documentation/docs/` folder, and are just standard markdown files.
 
 We plan to add a docker file soon for those that want to preview their changes that either dont have the .NET 10 SDK installed or that just want to work on the markdown and not touch the ASP.NET code.
 

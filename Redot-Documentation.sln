@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redot-Documentation", "Redot-Documentation\Redot-Documentation\Redot-Documentation.csproj", "{34DDE666-AB08-4486-95A2-00B318905E8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redot-Documentation", "Redot-Documentation\Redot-Documentation.csproj", "{34DDE666-AB08-4486-95A2-00B318905E8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redot-Documentation.Client", "Redot-Documentation\Redot-Documentation.Client\Redot-Documentation.Client.csproj", "{39A0F523-534B-495A-A26B-092916196B69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redot-Documentation.Client", "Redot-Documentation.Client\Redot-Documentation.Client.csproj", "{39A0F523-534B-495A-A26B-092916196B69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
