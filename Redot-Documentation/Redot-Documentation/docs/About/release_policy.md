@@ -1,7 +1,3 @@
----
-sidebar_position: 6
----
-
 # Redot release policy
 
 Redot's release policy is in constant evolution. The description below
@@ -11,85 +7,38 @@ community at a given time.
 
 ## Redot versioning
 
-Redot loosely follows [Semantic Versioning ](https://semver.org/)_ with a
-``major.minor.patch`` versioning system, albeit with an interpretation of each
-term adapted to the complexity of a game engine:
+Starting in 2026, Redot has moved to a new versioning scheme with a ``year.quarter`` system.
+We will release a new version of Redot every quarter, or every 3 months. Starting with 26.1, 
+Redot is hard forked from Godot 4.5.2, and aims to be compatible with most Godot 4.5.2 projects and extensions.
 
-- The ``major`` version is incremented when major compatibility breakages happen
-  which imply significant porting work to move projects from one major version
-  to another.
 
-  For example, porting Redot projects from Redot 3.x to Redot 4.x requires
-  running the project through a conversion tool, and then performing a number
-  of further adjustments manually for what the tool could not do automatically.
+:::note
 
-- The ``minor`` version is incremented for feature releases that do not break
-  compatibility in a major way. Minor compatibility breakage in very specific
-  areas *may* happen in minor versions, but the vast majority of projects
-  should not be affected or require significant porting work.
-
-  This is because Redot, as a game engine, covers many areas like rendering,
-  physics, and scripting. Fixing bugs or implementing new features in one area
-  might sometimes require changing a feature's behavior or modifying a class's
-  interface, even if the rest of the engine API remains backwards compatible.
-
-:::tip
-
-Upgrading to a new minor version is recommended for all users,
-but some testing is necessary to ensure that your project still behaves as
-expected.
+In addition to stable releases, we also periodically release beta versions.
+These are not intended for production use, but we encourage users to try them out and provide feedback.
+These are versioned slightly differently from stable releases, with a ``-beta.<Build Number>`` suffix (e.g. ``26.2-beta.1``)
+ or ``-rc.<Build Number>`` suffix (e.g. ``26.2-rc.1``).
 
 :::
-
-- The ``patch`` version is incremented for maintenance releases which focus on
-  fixing bugs and security issues, implementing new requirements for platform
-  support, and backporting safe usability enhancements. Patch releases are
-  backwards compatible.
-
-  Patch versions may include minor new features which do not impact the
-  existing API, and thus have no risk of impacting existing projects.
-
-:::tip
-
-Updating to new patch versions is therefore considered safe and strongly
-recommended to all users of a given stable branch.
-
-:::
-
-We call ``major.minor`` combinations *stable branches*. Each stable branch
-starts with a ``major.minor`` release (without the ``0`` for ``patch``) and is
-further developed for maintenance releases in a Git branch of the same name
-(for example patch updates for the 4.0 stable branch are developed in the
-``4.0`` Git branch).
 
 ## Release support timeline
 
-Stable branches are supported *at least* until the next stable branch is
-released and has received its first patch update. In practice, we support
-stable branches on a *best effort* basis for as long as they have active users
-who need maintenance updates.
+Starting in 2026, Redot will be released on a quarterly basis. The current version is supported until the next quarterly release.
 
-Whenever a new major version is released, we make the previous stable branch a
-long-term supported release, and do our best to provide fixes for issues
-encountered by users of that branch who cannot port complex projects to the new
-major version. This was the case for the 2.1 branch, and is the case for the
-3.x branch.
-
-In a given minor release series, only the latest patch release receives support.
-If you experience an issue using an older patch release, please upgrade to the
-latest patch release of that series and test again before reporting an issue
-on GitHub.
-
-| **Version** | **Release date** | **Support level** |
-| --- | --- | --- |
-| Redot 4.4 (`master`) | Q1 2025 (estimate) |  performance improvements, as well as bug fixes, while under development. | unstable | *Development.* Receives new features, usability and |
-| Redot 4.3 | August 2024 |  patches that enable platform support. | supported | Receives fixes for bugs and security issues, as well as |
+| **Version**           | **Release date** | **Support level** |
+|-----------------------|------------------|-------------------|
+| Redot 26.2 (`master`) | June 2026        | Unstable          |
+| Redot 26.1            | Feburary 2026    | Supported         |
+| Redot 4.4             | December 2025    | EOL               |
+| Redot 4.3             | August 2024      | EOL               |
 
 **Legend:**
-|supported| Full support –
-|partial| Partial support –
-|eol| No support (end of life) –
-|unstable| Development version
+
+|  **Status**  | **Description**          |
+|:------------:|--------------------------|
+|  Supported   | Full support             |
+|     EOL      | No support (end of life) |
+|   Unstable   | Development version      |
 
 Pre-release Redot versions aren't intended to be used in production and are
 provided for testing purposes only.
