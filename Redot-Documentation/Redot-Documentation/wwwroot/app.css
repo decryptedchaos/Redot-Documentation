@@ -133,6 +133,31 @@ h1:focus {
     color: white;
 }
 
+.callout-warning {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+
+    background: #8a8a8a;
+    border-left: 8px solid #aaaaaa;
+    border-radius: 4px;
+    padding: 20px 24px;
+    color: white;
+}
+
+.callout-icon-warning {
+    width: 24px;
+    height: 24px;
+
+    background-color: white;
+
+    -webkit-mask: url("./Icons/Font-Awesome/solid/exclamation-triangle.svg") no-repeat center;
+    mask: url("./Icons/Font-Awesome/solid/exclamation-triangle.svg") no-repeat center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
 .horizontal-stack {
     display: flex;
     gap: 16px;

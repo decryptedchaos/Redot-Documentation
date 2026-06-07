@@ -78,6 +78,13 @@ public class DocRendererService
             match => TransformCallout(match.Value, "info", IconConstants.TipsIcon),
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
         transformedMarkdown = TransformTabsBlocks(transformedMarkdown);
+        // warning
+        transformedMarkdown = Regex.Replace(
+            transformedMarkdown,
+            @":::warning\s*\r?\n(.*?)\r?\n:::",
+            match => TransformCallout(match.Value, "warning", IconConstants.TipsIcon),
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        transformedMarkdown = TransformTabsBlocks(transformedMarkdown);
 
         return transformedMarkdown;
     }
