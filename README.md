@@ -1,0 +1,22 @@
+# Redot Engine documentation
+
+This repository contains the source files of [Redot Engine](https://redotengine.org)'s documentation, in Markdown.
+
+This is a rewrite of our documentation website, and is a transition from Sphinx over to a custom solution in ASP.NET Blazor.
+
+The site is still under heavy construction and is not ready yet, but we hope to have it online before the release of Redot 26.2-stable.
+
+## Development
+
+There are no detailed build instructions at this time. The use of an IDE such as Visual Studio or JetBrains Rider is highly recommended. Simply build the solution and run the `Redot-Documentation` project.
+The docs themselves can be found in the `Redot-Documentation/Redot-Documentation/docs/` folder, and are just standard markdown files.
+
+We plan to add a docker file soon for those that want to preview their changes that either dont have the .NET 10 SDK installed or that just want to work on the markdown and not touch the ASP.NET code.
+
+## License
+
+With the exception of the `classes/` folder, all the content of this repository is licensed under the Creative Commons Attribution
+3.0 Unported license ([CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)) and is to be attributed to "the Redot community, modified from an original work by Juan Linietsky, Ariel Manzur and the Godot community".
+See [LICENSE.txt](/LICENSE.txt) for details.
+
+The files in the `classes/` folder are derived from [Redot's main source repository](https://github.com/redot-engine/redot) and are distributed under the MIT license, with the same authors as above.
