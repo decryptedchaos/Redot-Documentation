@@ -41,7 +41,7 @@ public sealed class Section : IRanking
     {
         DirectoryInfo directory = new DirectoryInfo(Path);
         if (!directory.Exists) return;
-        FileInfo sectionConfig = new FileInfo(FilePath.Combine(Path, "index.json"));
+        FileInfo sectionConfig = new FileInfo(FilePath.Combine(directory.FullName, "index.json"));
         Dictionary<string, int> rankingPriorities;
         HashSet<string> excludedItems;
         if (sectionConfig.Exists)
