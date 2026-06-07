@@ -83,7 +83,7 @@ public sealed class Section : IRanking
         {
             if (excludedItems.Contains(subDirectory.Name)) continue;
             int priority = rankingPriorities.GetValueOrDefault(subDirectory.Name, 1024);
-            Section subSection = new Section(subDirectory.Name, subDirectory.FullName, priority);
+            Section subSection = new Section(subDirectory.Name, FilePath.Combine(Path, subDirectory.Name), priority);
             SubSections.Add(subSection);
             subSection.LoadAndParse();
             subSection.SortRankings();
