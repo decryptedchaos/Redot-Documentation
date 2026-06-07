@@ -36,7 +36,7 @@
                 @if (ranking is Article article)
                 {
                     <NavLink class="nav-link nav-article-link" href="@GetArticleLink(article)">
-                        @NormalizeArticleName(article.Name)
+                        @NormalizeArticleName(article.DisplayName)
                     </NavLink>
                 }
                 else if (ranking is Section section)

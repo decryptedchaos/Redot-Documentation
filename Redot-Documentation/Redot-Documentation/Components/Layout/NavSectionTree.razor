@@ -5,12 +5,12 @@
         @if (Section.IndexArticle != null)
         {
             <NavLink class="nav-link nav-section-link" href="@BuildArticleLink(Section.IndexArticle)">
-                @Section.Name
+                @Section.DisplayName
             </NavLink>
         }
         else
         {
-            <span class="nav-link nav-section-link nav-section-no-index">@Section.Name</span>
+            <span class="nav-link nav-section-link nav-section-no-index">@Section.DisplayName</span>
         }
     </summary>
 
@@ -20,7 +20,7 @@
             @if (ranking is Article article)
             {
                 <NavLink class="nav-link nav-article-link" href="@BuildArticleLink(article)" style="@GetLevelStyle(Level + 1)">
-                    @NormalizeArticleName(article.Name)
+                    @NormalizeArticleName(article.DisplayName)
                 </NavLink>
             }
             else if (ranking is Section subSection)

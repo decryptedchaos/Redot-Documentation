@@ -24,6 +24,8 @@ public sealed class Section : IRanking
 
     private List<IRanking> _sortedRankings = new List<IRanking>();
 
+    public string DisplayName => ((IRanking)this).GetDisplayName();
+
     public Section()
     {
 

@@ -7,6 +7,8 @@ public class Article : IRanking
     public string Path { get; set; } = string.Empty;
     public string Slug { get; set; } = string.Empty;
 
+    public string DisplayName => ((IRanking)this).GetDisplayName();
+
     public Article()
     {
 
