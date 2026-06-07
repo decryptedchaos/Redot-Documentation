@@ -1,4 +1,8 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using Redot_Documentation.Services
+@using Redot_Documentation.Versioning
+@inject VersionManagerService VersionManagerService
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <div class="horizontal-stack">
@@ -18,11 +22,86 @@
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
             </NavLink>
-            <NavLink class="nav-link" href="en/latest/About/introduction" Match="NavLinkMatch.All">
-                Introduction
-            </NavLink>
+
+            <label class="version-label" for="version-selector">Version</label>
+            <select id="version-selector" class="version-select" @onchange="OnVersionChanged" value="@_selectedVersion">
+                @foreach (string version in _availableVersions)
+                {
+                    <option value="@version">@version</option>
+                }
+            </select>
+
+            @foreach (IRanking ranking in _rankings)
+            {
+                @if (ranking is Article article)
+                {
+                    <NavLink class="nav-link nav-article-link" href="@GetArticleLink(article)">
+                        @NormalizeArticleName(article.Name)
+                    </NavLink>
+                }
+                else if (ranking is Section section)
+                {
+                    <NavSectionTree Section="section" BuildArticleLink="GetArticleLink" Level="0" />
+                }
+            }
         </div>
 
 
     </nav>
 </div>
+
+@code {
+    private string[] _availableVersions = [];
+    private string _selectedVersion = "latest";
+    private IRanking[] _rankings = [];
+
+    protected override void OnInitialized()
+    {
+        _availableVersions = VersionManagerService.Versions;
+        if (_availableVersions.Length == 0)
+        {
+            _rankings = [];
+            return;
+        }
+
+        _selectedVersion = _availableVersions.Contains("latest")
+            ? "latest"
+            : _availableVersions[0];
+
+        LoadRankings();
+    }
+
+    private void OnVersionChanged(ChangeEventArgs changeEventArgs)
+    {
+        string? selectedVersion = changeEventArgs.Value?.ToString();
+        if (string.IsNullOrWhiteSpace(selectedVersion))
+            return;
+
+        _selectedVersion = selectedVersion;
+        LoadRankings();
+    }
+
+    private void LoadRankings()
+    {
+        VersionProvider versionProvider = VersionManagerService.GetVersionProvider(_selectedVersion);
+        versionProvider.SortRankings();
+        _rankings = versionProvider.GetSortedRankings();
+    }
+
+    private static string GetArticleLink(Article article)
+    {
+        string normalizedPath = article.Path.Replace("\\", "/");
+        if (normalizedPath.StartsWith("./docs/", StringComparison.OrdinalIgnoreCase))
+            normalizedPath = normalizedPath[7..];
+
+        if (normalizedPath.EndsWith(".md", StringComparison.OrdinalIgnoreCase))
+            normalizedPath = normalizedPath[..^3];
+
+        return $"en/{normalizedPath}";
+    }
+
+    private static string NormalizeArticleName(string articleName)
+        => articleName.EndsWith(".md", StringComparison.OrdinalIgnoreCase)
+            ? articleName[..^3]
+            : articleName;
+}

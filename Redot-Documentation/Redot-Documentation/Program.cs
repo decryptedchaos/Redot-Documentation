@@ -15,6 +15,7 @@ public class Program
             .AddInteractiveServerComponents()
             .AddInteractiveWebAssemblyComponents();
         builder.Services.AddScoped<DocRendererService>();
+        builder.Services.AddSingleton<VersionManagerService>();
 
         var app = builder.Build();
 
@@ -40,7 +41,7 @@ public class Program
             .AddInteractiveServerRenderMode()
             .AddInteractiveWebAssemblyRenderMode()
             .AddAdditionalAssemblies(typeof(Client._Imports).Assembly);
-
+        app.Services.GetService<VersionManagerService>()?.LoadContent();
         app.Run();
     }
 }

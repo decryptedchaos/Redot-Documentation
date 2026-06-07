@@ -1,0 +1,72 @@
+namespace Redot_Documentation.Versioning;
+
+public class VersionProvider
+{
+    public string VersionRoot => $"./docs/{VersionName}/";
+
+    public string VersionName { get; set; } = "latest";
+    public Section AboutSection { get; set; } = new("About", "./docs/About/", 0);
+
+    public Section? VersionedDocsSection { get; set; } = null;
+
+    private List<IRanking> _sortedRankings = new List<IRanking>();
+
+    private Dictionary<string, string> SlugLookupTable = new();
+
+    public VersionProvider()
+    {
+        AboutSection.LoadAndParse();
+        AboutSection.SortRankings();
+    }
+    public VersionProvider(string versionName) : this()
+    {
+        VersionName = versionName;
+        if (Directory.Exists(VersionRoot))
+        {
+            VersionedDocsSection = new Section("Versioned Docs", VersionRoot);
+            VersionedDocsSection.LoadAndParse();
+            VersionedDocsSection.SortRankings();
+        }
+    }
+
+    public void SortRankings()
+    {
+        _sortedRankings.Clear();
+        _sortedRankings.Add(AboutSection);
+        _sortedRankings.Sort();
+        if (VersionedDocsSection != null)
+        {
+            VersionedDocsSection.SortRankings();
+            _sortedRankings.AddRange(VersionedDocsSection.GetSortedRankings());
+        }
+    }
+    public IRanking[] GetSortedRankings() => _sortedRankings.ToArray();
+
+    public void ParseSlugs()
+    {
+        SortRankings();
+        SlugLookupTable.Clear();
+        foreach (IRanking ranking in GetSortedRankings())
+        {
+            if (ranking is Section subSection)
+                ParseSlugs(subSection);
+            else
+                SlugLookupTable.Add(ranking.Slug, ranking.Path.Replace(".", "/en"));
+        }
+    }
+
+    private void ParseSlugs(Section section)
+    {
+        if (section.IndexArticle != null)
+            SlugLookupTable.Add(section.IndexArticle.Slug, section.IndexArticle.Path.Replace(".", "/en"));
+        foreach (IRanking ranking in section.GetSortedRankings())
+        {
+            if (ranking is Section subSection)
+                ParseSlugs(subSection);
+            else
+                SlugLookupTable.Add(ranking.Slug, ranking.Path.Replace(".", "/en"));
+        }
+    }
+    public string GetPathFromSlug(string slug) => SlugLookupTable[slug];
+
+}

@@ -1,0 +1,50 @@
+@using Redot_Documentation.Versioning
+
+<details class="nav-section" style="@GetLevelStyle(Level)">
+    <summary class="nav-section-summary">
+        @if (Section.IndexArticle != null)
+        {
+            <NavLink class="nav-link nav-section-link" href="@BuildArticleLink(Section.IndexArticle)">
+                @Section.Name
+            </NavLink>
+        }
+        else
+        {
+            <span class="nav-link nav-section-link nav-section-no-index">@Section.Name</span>
+        }
+    </summary>
+
+    <div class="nav-section-children">
+        @foreach (IRanking ranking in Section.GetSortedRankings())
+        {
+            @if (ranking is Article article)
+            {
+                <NavLink class="nav-link nav-article-link" href="@BuildArticleLink(article)" style="@GetLevelStyle(Level + 1)">
+                    @NormalizeArticleName(article.Name)
+                </NavLink>
+            }
+            else if (ranking is Section subSection)
+            {
+                <NavSectionTree Section="subSection" BuildArticleLink="BuildArticleLink" Level="@(Level + 1)" />
+            }
+        }
+    </div>
+</details>
+
+@code {
+    [Parameter, EditorRequired]
+    public Section Section { get; set; } = null!;
+
+    [Parameter, EditorRequired]
+    public Func<Article, string> BuildArticleLink { get; set; } = null!;
+
+    [Parameter]
+    public int Level { get; set; }
+
+    private static string GetLevelStyle(int level) => $"--section-level: {level};";
+
+    private static string NormalizeArticleName(string articleName)
+        => articleName.EndsWith(".md", StringComparison.OrdinalIgnoreCase)
+            ? articleName[..^3]
+            : articleName;
+}

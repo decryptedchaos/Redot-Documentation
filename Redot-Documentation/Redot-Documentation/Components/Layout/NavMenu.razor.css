@@ -51,6 +51,23 @@
     padding-bottom: 0.5rem;
 }
 
+.version-label {
+    color: #d7d7d7;
+    display: block;
+    font-size: 0.8rem;
+    margin: 0.5rem 0 0.25rem;
+}
+
+.version-select {
+    width: 100%;
+    margin-bottom: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 0.35rem 0.5rem;
+}
+
     .nav-item:first-of-type {
         padding-top: 1rem;
     }
@@ -79,6 +96,37 @@
 .nav-item ::deep .nav-link:hover {
     background-color: rgba(255,255,255,0.1);
     color: white;
+}
+
+.nav-item ::deep .nav-article-link {
+    padding-left: calc(0.75rem + var(--section-level, 0) * 1rem);
+}
+
+.nav-item ::deep .nav-section {
+    margin: 0;
+    padding-left: calc(var(--section-level, 0) * 0.75rem);
+}
+
+.nav-item ::deep .nav-section-summary {
+    list-style: none;
+}
+
+.nav-item ::deep .nav-section-summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-item ::deep .nav-section-link {
+    font-weight: 600;
+    padding-left: 0.75rem;
+}
+
+.nav-item ::deep .nav-section-no-index {
+    color: #d7d7d7;
+    cursor: default;
+}
+
+.nav-item ::deep .nav-section-children {
+    margin-left: 0.2rem;
 }
 
 .nav-scrollable {
