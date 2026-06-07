@@ -6,6 +6,8 @@ public class VersionProvider
 
     public string VersionName { get; set; } = "latest";
     public Section AboutSection { get; set; } = new("About", "./docs/About/", 0);
+    
+    public Section CommunitySection { get; set; } = new("Community", "./docs/Community/", 1);
 
     public Section? VersionedDocsSection { get; set; } = null;
 
@@ -17,6 +19,8 @@ public class VersionProvider
     {
         AboutSection.LoadAndParse();
         AboutSection.SortRankings();
+        CommunitySection.LoadAndParse();
+        CommunitySection.SortRankings();
     }
     public VersionProvider(string versionName) : this()
     {
@@ -33,6 +37,7 @@ public class VersionProvider
     {
         _sortedRankings.Clear();
         _sortedRankings.Add(AboutSection);
+        _sortedRankings.Add(CommunitySection);
         _sortedRankings.Sort();
         if (VersionedDocsSection != null)
         {
