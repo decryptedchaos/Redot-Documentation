@@ -4,6 +4,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redot-Documentation", "Redo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redot-Documentation.Client", "Redot-Documentation.Client\Redot-Documentation.Client.csproj", "{39A0F523-534B-495A-A26B-092916196B69}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{6A5ACE17-1104-4BD0-AD19-39E179291B5D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		REDOT_AUTHORS.md = REDOT_AUTHORS.md
+		LICENSE.txt = LICENSE.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
