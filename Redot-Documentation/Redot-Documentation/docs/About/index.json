@@ -1,0 +1,10 @@
+{
+  "SlugPrefix": "abt_",
+  "RankingPriorities": {
+    "introduction.md": 1,
+    "faq.md": 2,
+    "release_policy.md": 3,
+    "list_of_features.md": 4,
+    "system_requirements.md": 5
+  }
+}
