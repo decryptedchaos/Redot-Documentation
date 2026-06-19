@@ -1,7 +1,7 @@
 [phases.setup]
 nixPkgs = ['dotnet-sdk_10']
 nixpkgsArchive = '25.11'
-aptPkgs = ['libc6', 'libicu-dev', 'libfontconfig1', 'nano', 'nmap', 'iputils-ping']
+aptPkgs = ['libc6', 'libicu-dev', 'libfontconfig1', 'nano', 'nmap', 'iputils-ping', 'dotnet-sdk-10.0']
 
 [phases.install]
 #cmds = ['dotnet restore Redot-Documentation.csproj --verbosity detailed --configfile NuGet.config']
