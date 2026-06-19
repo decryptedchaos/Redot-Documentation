@@ -11,7 +11,7 @@ cmds = ['dotnet restore --verbosity detailed']
 #cmds = ['dotnet publish Redot-Documentation.csproj -c Release -r linux-x64 -f net10.0 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o out /p:Platform=AnyCPU && chmod +x out/Redot-Engine-Website']
 cmds = ['dotnet build']
 [start]
-cmd = 'cd Redot-Documentation/bin/Debug/net10.0 && ./Redot-Documentation'
+cmd = 'ls -lha && cd Redot-Documentation/bin/Debug/net10.0 && ./Redot-Documentation'
 [variables]
 ASPNETCORE_ENVIRONMENT = 'Production'
 ASPNETCORE_URLS = 'http://0.0.0.0:8080'
