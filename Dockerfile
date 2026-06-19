@@ -5,13 +5,14 @@ WORKDIR /src
 # Copy solution file
 COPY Redot-Documentation.sln .
 
-# Copy the main project file (the one that actually exists)
+# Copy ALL .csproj files
 COPY Redot-Documentation/Redot-Documentation.csproj ./Redot-Documentation/
+COPY Redot-Documentation.Client/Redot-Documentation.Client.csproj ./Redot-Documentation.Client/
 
-# Restore dependencies for the main project
-RUN dotnet restore "Redot-Documentation/Redot-Documentation.csproj"
+# Restore ALL projects
+RUN dotnet restore
 
-# Copy everything else (including the Client folder if it exists)
+# Copy everything else
 COPY . .
 
 # Publish the main project
