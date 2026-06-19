@@ -1,18 +1,1 @@
-[phases.setup]
-nixPkgs = ['dotnet-sdk_10']
-nixpkgsArchive = '25.11'
-aptPkgs = ['libc6', 'libicu-dev', 'libfontconfig1', 'nano', 'nmap', 'iputils-ping', 'dotnet-sdk-10.0']
-
-[phases.install]
-#cmds = ['dotnet restore Redot-Documentation.csproj --verbosity detailed --configfile NuGet.config']
-cmds = ['dotnet restore --verbosity detailed']
-
-[phases.build]
-#cmds = ['dotnet publish Redot-Documentation.csproj -c Release -r linux-x64 -f net10.0 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o out /p:Platform=AnyCPU && chmod +x out/Redot-Engine-Website']
-cmds = ['dotnet build']
-[start]
-cmd = 'ls -lha && cd Redot-Documentation/bin && ls -lha'
-[variables]
-ASPNETCORE_ENVIRONMENT = 'Production'
-ASPNETCORE_URLS = 'http://0.0.0.0:8080'
-NIXPACKS_CSHARP_SDK_VERSION = '10.0.100'
+NOT USING NIXPACK!
