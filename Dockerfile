@@ -17,7 +17,7 @@ COPY . .
 
 # Publish the main project
 WORKDIR /src/Redot-Documentation
-RUN dotnet publish -c Release -o /app/publish --no-restore
+RUN dotnet publish -c Release -o /app/publish --no-restore -p:BlazorWebAssemblyEnableRuntime=true -p:BlazorWebAssemblyStaticWebAssets=true
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
