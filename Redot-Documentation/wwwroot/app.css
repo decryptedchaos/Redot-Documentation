@@ -6,6 +6,12 @@
     --app-text: #f5f5f5;
     --app-link-color: #f28c3b;
 }
+
+h1 {
+    margin: 2rem 0 2rem;
+}
+
+
 h2 {
     margin: 2rem 0 2rem;
 }
@@ -166,7 +172,7 @@ h1:focus {
     gap: 16px;
     align-items: flex-start;
 
-    background: #836b00;
+    background: #b38500;
     border-left: 8px solid #ffd000;
     border-radius: 4px;
     padding: 20px 24px;
@@ -318,6 +324,7 @@ h1:focus {
     margin-right: auto;
     margin-left: auto;
     max-width: 85%;
+    min-width: 85%;
 }
 
 .doc-viewer-toc {

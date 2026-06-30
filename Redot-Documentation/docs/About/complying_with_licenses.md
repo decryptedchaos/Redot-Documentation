@@ -2,24 +2,6 @@
 # Complying with licenses
 
 
-### WILL REMOVE EXTRAS AFTER TESTING
-
-:::info
-
-See [doc_system_requirements](abt_system_requirements) for hardware and software version requirements.
-
-:::
-
-
-
-:::danger
-
-See [doc_system_requirements](abt_system_requirements) for hardware and software version requirements.
-
-:::
-
-
-
 :::warning
 
 The recommendations in this page **are not legal advice.** They are provided
