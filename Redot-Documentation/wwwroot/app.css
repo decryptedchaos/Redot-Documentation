@@ -311,6 +311,12 @@ h1:focus {
     color: #ffffff;
 }
 
+
+li ul li
+ {
+    margin-bottom: 1rem;
+}
+
 .doc-viewer-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 300px;
