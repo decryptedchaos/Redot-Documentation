@@ -9,11 +9,15 @@
 
 h1 {
     margin: 2rem 0 2rem;
+    font-weight: 600;
+    font-size: 30px;
 }
 
 
 h2 {
     margin: 2rem 0 2rem;
+    font-weight: 500;
+    font-size: 25px;
 }
 
 h3 {
@@ -329,7 +333,7 @@ h1:focus {
 
 .doc-viewer-toc {
     position: sticky;
-    top: 1rem;
+    top: 5rem;
     max-height: calc(100vh - 2rem);
     overflow-y: auto;
     padding-left: 0.75rem;
