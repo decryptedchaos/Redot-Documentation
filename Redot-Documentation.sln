@@ -9,7 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionF
 		README.md = README.md
 		REDOT_AUTHORS.md = REDOT_AUTHORS.md
 		LICENSE.txt = LICENSE.txt
+		.gitignore = .gitignore
+		Dockerfile = Dockerfile
+		.github\workflows\dotnet-ci.yml = .github\workflows\dotnet-ci.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redot-Documentation-Tests", "Redot-Documentation-Tests\Redot-Documentation-Tests.csproj", "{3A38BB65-8DEC-4C71-A01B-41662DBA3D0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,5 +30,9 @@ Global
 		{39A0F523-534B-495A-A26B-092916196B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39A0F523-534B-495A-A26B-092916196B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39A0F523-534B-495A-A26B-092916196B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A38BB65-8DEC-4C71-A01B-41662DBA3D0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A38BB65-8DEC-4C71-A01B-41662DBA3D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A38BB65-8DEC-4C71-A01B-41662DBA3D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A38BB65-8DEC-4C71-A01B-41662DBA3D0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
