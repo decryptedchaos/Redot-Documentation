@@ -6,6 +6,13 @@
     --app-text: #f5f5f5;
     --app-link-color: #f28c3b;
 }
+h2 {
+    margin: 2rem 0 2rem;
+}
+
+h3 {
+    margin: 2rem 0 2rem;
+}
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -16,6 +23,7 @@ html, body {
 table, th, td {
     border: 1px solid #ddd;
     padding: 8px;
+    margin: 4rem 0 4rem;
 }
 th {
     font-weight: bold;
@@ -126,6 +134,7 @@ h1:focus {
 
 .doc-viewer-content code {
     font-family: Consolas, "Cascadia Code", "Fira Code", "JetBrains Mono", Menlo, Monaco, "Courier New", monospace;
+    color: #4bd633;
 }
 
 .callout-tip {
@@ -145,8 +154,8 @@ h1:focus {
     gap: 16px;
     align-items: flex-start;
 
-    background: #8a8a8a;
-    border-left: 8px solid #aaaaaa;
+    background: #4d4d4d;
+    border-left: 8px solid #7ad4d4;
     border-radius: 4px;
     padding: 20px 24px;
     color: white;
@@ -157,8 +166,8 @@ h1:focus {
     gap: 16px;
     align-items: flex-start;
 
-    background: #937a07;
-    border-left: 8px solid #756005;
+    background: #836b00;
+    border-left: 8px solid #ffd000;
     border-radius: 4px;
     padding: 20px 24px;
     color: white;
@@ -169,7 +178,7 @@ h1:focus {
     gap: 16px;
     align-items: flex-start;
 
-    background: #4d0000;
+    background: #360000;
     border-left: 8px solid #8b0000;
     border-radius: 4px;
     padding: 20px 24px;
@@ -238,8 +247,8 @@ h1:focus {
     gap: 16px;
     align-items: flex-start;
 
-    background: #8a8a8a;
-    border-left: 8px solid #aaaaaa;
+    background: #4d4d4d;
+    border-left: 8px solid #02b150;
     border-radius: 4px;
     padding: 20px 24px;
     color: white;
@@ -294,8 +303,8 @@ h1:focus {
 
 .doc-viewer-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
-    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 1rem;
     align-items: start;
 }
 
@@ -303,8 +312,12 @@ h1:focus {
     grid-template-columns: minmax(0, 1fr);
 }
 
-.doc-viewer-content {
+.doc-viewer-content
+ {
     min-width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 85%;
 }
 
 .doc-viewer-toc {
@@ -329,17 +342,20 @@ h1:focus {
 }
 
 .doc-viewer-toc li {
-    margin: 0.35rem 0;
+    margin: 0 0 0.85rem 0;
     font-size: 0.9rem;
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
-.doc-viewer-toc .toc-level-2 {
-    padding-left: 0.75rem;
+
+
+.doc-viewer-toc .toc-level-2
+ {
+    padding-left: 1.0rem;
 }
 
 .doc-viewer-toc .toc-level-3 {
-    padding-left: 1.5rem;
+    padding-left: 1.8rem;
 }
 
 .doc-viewer-toc a {

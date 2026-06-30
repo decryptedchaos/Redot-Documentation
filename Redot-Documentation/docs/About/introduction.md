@@ -3,7 +3,7 @@
 
 <Tabs>
 
-<TabItem value="gdscript" label="Gdscript">
+<TabItem value="gdscript" label="GDscript">
 
 ```gdscript
 func _ready():
@@ -13,7 +13,7 @@ func _ready():
 
 </TabItem>
 
-<TabItem value="csharp" label="Csharp">
+<TabItem value="csharp" label="CSharp">
 
 ```csharp
 public override void _Ready()
@@ -24,6 +24,8 @@ public override void _Ready()
 ```
 
 </TabItem>
+
+
 
 </Tabs>
 
